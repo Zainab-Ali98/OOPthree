@@ -36,4 +36,5 @@ for(int i= 1; i<=count; i++)
 
     p.AddProduct(name, price, quantity);
 }
+
 p.DisplayProducts();
