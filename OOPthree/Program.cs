@@ -18,3 +18,9 @@ double quantity = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Product name:  " + p.GetName() + "Product Price: " + price +"quantity is: " + quantity + " total " + Total);
 
 Console.WriteLine(Product.TotInfo(p.GetName(),price, quantity));
+
+
+Console.WriteLine("how many products");
+
+p.AddProducts(p.GetName(), price, quantity);
+p.GetProduct();

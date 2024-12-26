@@ -8,9 +8,17 @@ namespace OOPthree.Models
 {
     public class Product
     {
-        string name;
-        double price, quantity;
-        
+       public string name { get; set; }
+       public double price { get; set; } 
+       public double quantity { get; set; }
+
+        List<Product> product = new List<Product>();
+        public void AddProducts( string Name, double Price, double Quantity)
+        {
+            product.Add(new Product { name = Name, price = Price, quantity = Quantity });
+        }
+
+      
         public void SetName(string Name) { name = Name; }
 
 
@@ -27,6 +35,12 @@ namespace OOPthree.Models
             double Total = price * quantity;
    
             return $"product  {name } , price { price} , quantity {quantity }, Total { Total } ";
+        }
+
+         public void GetProduct()
+        {  foreach (var custmer in product) {
+                Console.WriteLine("Name "+custmer.name +"price "+ custmer.price+" Qty "+ custmer.quantity+" Total "+(quantity*price));
+                    }
         }
 
     }
