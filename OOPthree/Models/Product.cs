@@ -23,8 +23,8 @@ namespace OOPthree.Models
         {
             foreach (Product product in productlist)
             {
-                Console.WriteLine("Name : " + product.Name + "   " + "price : " + product.Price + " Kd  " +
-                  "Quantity" + product.Quantity + " total  " + CalcTotal(product.Price,product.Quantity));
+                Console.WriteLine("Name : " + product.Name + "   " + "price : " + product.Price +"  " + " Kd  " +
+                  "Quantity" + product.Quantity +"   " +" total  " + CalcTotal(product.Price,product.Quantity));
             }
         }
 
