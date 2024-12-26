@@ -2,25 +2,20 @@
 using System.Xml.Linq;
 using OOPthree.Models;
 
+string name;
+double price, quantity;
 Product p = new Product();
-Console.WriteLine("enter name");
-p.SetName(Console.ReadLine());
+Console.WriteLine("enter product name");
+name = Console.ReadLine();
 
-Console.WriteLine("Product name:  " + p.GetName());
-
-Console.WriteLine("enter price");
-double price = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Product name:  " + p.GetName() +" Product Price: " + price);
-double Total=0;
+Console.WriteLine("enter product price");
+price = Convert.ToDouble(Console.ReadLine());
 
 Console.WriteLine("enter quantity");
-double quantity = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Product name:  " + p.GetName() + "Product Price: " + price +"quantity is: " + quantity + " total " + Total);
-
-Console.WriteLine(Product.TotInfo(p.GetName(),price, quantity));
+quantity = Convert.ToDouble(Console.ReadLine());
 
 
-Console.WriteLine("how many products");
 
-p.AddProducts(p.GetName(), price, quantity);
-p.GetProduct();
+p.GetInfo(name);
+p.GetInfo(name, price);
+p.GetInfo(name, price, quantity);

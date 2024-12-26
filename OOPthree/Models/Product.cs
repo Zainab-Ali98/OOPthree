@@ -8,40 +8,49 @@ namespace OOPthree.Models
 {
     public class Product
     {
-       public string name { get; set; }
-       public double price { get; set; } 
-       public double quantity { get; set; }
+        public string Name { get; set; } //prop must be capital
+        public double Price { get; set; }
+        public double Quantity { get; set; }
 
-        List<Product> product = new List<Product>();
-        public void AddProducts( string Name, double Price, double Quantity)
+        List<Product> productlist = new List<Product>();
+        public void AddProduct(string name, double Price, double Quantity)
         {
-            product.Add(new Product { name = Name, price = Price, quantity = Quantity });
+            productlist.Add(new Product { Name = name, Price = Price, Quantity = Quantity });
         }
 
-      
-        public void SetName(string Name) { name = Name; }
 
-
-        public string GetName() { return name; }
-
-        public string GetInfo(string name, double price)
+        public void DisplayProducts()
         {
-            return "Name: " + name + " " + " Price :" + price;
+            foreach (Product product in productlist)
+            {
+                Console.WriteLine("Name : " + product.Name + "   " + "price : " + product.Price + " Kd  " +
+                  "Quantity" + product.Quantity + " total  " + CalcTotal(product.Price,product.Quantity));
+            }
         }
 
-        public static string TotInfo(string name, double price, double quantity)
+
+
+        public void GetInfo(string name)
         {
+            Console.WriteLine($"product name : {name}");
 
-            double Total = price * quantity;
-   
-            return $"product  {name } , price { price} , quantity {quantity }, Total { Total } ";
+        }
+        public void GetInfo(string name, double price)
+        {
+            Console.WriteLine($"product name : {name}, price: {price}");
+
         }
 
-         public void GetProduct()
-        {  foreach (var custmer in product) {
-                Console.WriteLine("Name "+custmer.name +"price "+ custmer.price+" Qty "+ custmer.quantity+" Total "+(quantity*price));
-                    }
+        public void GetInfo(string name, double price, double quantity)
+        {
+            Console.WriteLine($"product name : {name}, price: {price}, Quantity  {quantity} ");
+           
         }
+         public double CalcTotal( double price, double quantity )
+        {
+            return price * quantity;
+        }
+
 
     }
 }
